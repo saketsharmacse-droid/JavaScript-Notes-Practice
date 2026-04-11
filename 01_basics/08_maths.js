@@ -1,0 +1,1 @@
+//maths ki ek library by defaylt aati hai js ke saath
