@@ -32,90 +32,34 @@ length: 12
 
 //various string functions, mastering strings means mastering these string functions:
 /*
-[[Prototype]]
-: 
-String
-anchor
-: 
-ƒ anchor()
-at
-: 
-ƒ at()
-big
-: 
-ƒ big()
-blink
-: 
-ƒ blink()
-bold
-: 
-ƒ bold()
-charAt
-: 
-ƒ charAt()
-charCodeAt
-: 
-ƒ charCodeAt()
-codePointAt
-: 
-ƒ codePointAt()
-concat
-: 
-ƒ concat()
-constructor
-: 
-ƒ String()
-endsWith
-: 
-ƒ endsWith()
-fixed
-: 
-ƒ fixed()
-fontcolor
-: 
-ƒ fontcolor()
-fontsize
-: 
-ƒ fontsize()
-includes
-: 
-ƒ includes()
-indexOf
-: 
-ƒ indexOf()
-isWellFormed
-: 
-ƒ isWellFormed()
-italics
-: 
-ƒ italics()
-lastIndexOf
-: 
-ƒ lastIndexOf()
-length
-: 
-0
-link
-: 
-ƒ link()
-localeCompare
-: 
-ƒ localeCompare()
-match
-: 
-ƒ match()
-matchAll
-: 
-ƒ matchAll()
-normalize
-: 
-ƒ normalize()
-padEnd
-: 
-ƒ padEnd()
-padStart
-: 
-ƒ padStart()
+[[Prototype]]: String
+anchor: ƒ anchor()
+at: ƒ at()
+big: ƒ big()
+blink: ƒ blink()
+bold: ƒ bold()
+charAt: ƒ charAt()
+charCodeAt: ƒ charCodeAt()
+codePointAt: ƒ codePointAt()
+concat: ƒ concat()
+constructor: ƒ String()
+endsWith: ƒ endsWith()
+fixed: ƒ fixed()
+fontcolor: ƒ fontcolor()
+fontsize: ƒ fontsize()
+includes: ƒ includes()
+indexOf: ƒ indexOf()
+isWellFormed: ƒ isWellFormed()
+italics: ƒ italics()
+lastIndexOf: ƒ lastIndexOf()
+length: 0
+link: ƒ link()
+localeCompare: ƒ localeCompare()
+match: ƒ match()
+matchAll: ƒ matchAll()
+normalize: ƒ normalize()
+padEnd: ƒ padEnd()
+padStart: ƒ padStart()
 repeat: ƒ repeat()
 replace: ƒ replace()
 replaceAll: ƒ replaceAll()
