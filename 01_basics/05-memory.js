@@ -4,7 +4,7 @@
 
 let myYoutubeName = "SaketSharmadotcom"
 let anotherName = myYoutubeName
-amotherName = "Saket"
+anotherName = "Saket"
 
 console.log(anotherName);
 
