@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM LEarning</title>
+</head>
+<body>
+    <div class="bg-black">
+        <h1 class = "heading">DOM learning from YouTube</h1>
+        <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium architecto fuga eos perferendis quibusdam delectus voluptates, ducimus autem ipsum repudiandae quia porro iste commodi explicabo natus blanditiis voluptatem quasi quas.</p>
+
+
+        <--dom is Document Object Model--!>
+        <-- humein mainly dom aur events ko samajhna hai --!>
+        <-- websites mei jitte bhi headings, buttons yaa jo bhi responsive cheezein rhti hai, sab kuch actually mei objects hi rhti hai, toh unko dom ka use krke manipulation bhi kiya jaa sakta hai --!>
+
+    </div>
+    
+</body>
+</html>
+
+
+
+<-- NOTES--!>
+<-- console.log(window) --!>
+<-- Window apne aap mei ek object hai, jo kaafi cheezein hold krta hai, aur hum uske document ko access krke dekh bhi sakte hai ki kya kya hold krta hai. --!>
+<--   
+console.log(window)
+
+Window {
+0: Window {
+window: Window,
+self: Window,
+document: document,
+name: '',
+location: Location,
+…
+},
+
+1: Window {
+window: Window,
+self: Window,
+document: document,
+name: '',
+location: Location,
+…
+},
+
+window: Window,
+self: Window,
+document: document,
+name: '',
+location: Location,
+
+$RB: [],
+$RC: ƒ (a,b),
+$RT: 1245.2000000029802,
+$RV: ƒ (a),
+
+DD_LOGS: {
+version: '6.22.0',
+logger: wL,
+onReady: ƒ,
+init: ƒ,
+setTrackingConsent: ƒ,
+…
+},
+
+DD_RUM: {
+version: '6.22.0',
+onReady: ƒ,
+init: ƒ,
+setTrackingConsent: ƒ,
+setViewName: ƒ,
+…
+},
+
+MotionIsMounted: true,
+
+ReactQueryError: class ReactQueryErrorSentinel,
+
+SDK: {
+init: ƒ,
+sessionObserverToken: ƒ,
+token: ƒ
+},
+
+alert: ƒ alert(),
+atob: ƒ atob(),
+blur: ƒ blur(),
+btoa: ƒ btoa(),
+
+caches: CacheStorage {},
+
+cancelAnimationFrame: ƒ cancelAnimationFrame(),
+cancelIdleCallback: ƒ cancelIdleCallback(),
+captureEvents: ƒ captureEvents(),
+
+chrome: {
+loadTimes: ƒ,
+csi: ƒ
+},
+
+clearInterval: ƒ clearInterval(),
+clearTimeout: ƒ clearTimeout(),
+
+clientInformation: Navigator {
+vendorSub: '',
+productSub: '20030107',
+vendor: 'Google Inc.',
+maxTouchPoints: 1,
+scheduling: Scheduling,
+…
+},
+
+close: ƒ close(),
+closed: false,
+
+confirm: ƒ confirm(),
+
+cookieStore: CookieStore {
+onchange: null
+},
+
+crashReport: CrashReportContext {},
+
+createImageBitmap: ƒ createImageBitmap(),
+
+credentialless: false,
+crossOriginIsolated: false,
+
+crypto: Crypto {
+subtle: SubtleCrypto
+},
+
+customElements: CustomElementRegistry {},
+
+devicePixelRatio: 2.0000000298023224,
+
+document: document,
+
+documentPictureInPicture: DocumentPictureInPicture {
+window: null,
+onenter: null
+},
+
+event: undefined,
+external: External {},
+
+fence: null,
+
+fetch: ƒ (),
+fetchLater: ƒ fetchLater(),
+
+find: ƒ find(),
+focus: ƒ focus(),
+
+frameElement: null,
+
+frames: Window {
+0: Window,
+1: Window,
+window: Window,
+self: Window,
+document: document,
+name: '',
+location: Location,
+…
+},
+
+getComputedStyle: ƒ getComputedStyle(),
+getScreenDetails: ƒ getScreenDetails(),
+getSelection: ƒ getSelection(),
+
+history: History {
+length: 4,
+scrollRestoration: 'auto',
+state: {…}
+},
+
+indexedDB: IDBFactory {},
+
+innerHeight: 1242,
+innerWidth: 1116,
+
+isSecureContext: true,
+
+launchQueue: LaunchQueue {},
+
+length: 2,
+
+localStorage: Storage {
+oai/apps/searchSettings: '{"hasSearchedMinTimes":true}',
+oai/apps/chatTheme/user-GtPhq341yP2JR2gzzsFi4XlW: '"default"',
+homepage_prompt_style: '""',
+connectors-reconnect-modal-dismissed: 'false',
+oai/apps/caUpsellBanner: '{"state":{},"version":0}',
+…
+},
+
+location: Location {
+ancestorOrigins: DOMStringList,
+href: 'https://chatgpt.com/c/69ecbe70-7530-83e8-8442-26983e720b9f',
+origin: 'https://chatgpt.com',
+protocol: 'https:',
+host: 'chatgpt.com',
+…
+},
+
+locationbar: BarProp { visible: true },
+
+matchMedia: ƒ matchMedia(),
+
+menubar: BarProp { visible: true },
+
+moveBy: ƒ moveBy(),
+moveTo: ƒ moveTo(),
+
+name: "",
+
+navigation: Navigation {
+currentEntry: NavigationHistoryEntry,
+transition: null,
+activation: NavigationActivation,
+canGoBack: true,
+canGoForward: false,
+…
+},
+
+navigator: Navigator {
+vendorSub: '',
+productSub: '20030107',
+vendor: 'Google Inc.',
+maxTouchPoints: 1,
+scheduling: Scheduling,
+…
+},
+
+onabort: null,
+onafterprint: null,
+onanimationcancel: null,
+onanimationend: null,
+onanimationiteration: null,
+onanimationstart: null,
+onappinstalled: null,
+onauxclick: null,
+onbeforeinput: null,
+onbeforeinstallprompt: null,
+onbeforematch: null,
+onbeforeprint: null,
+onbeforetoggle: null,
+onbeforeunload: null,
+onbeforexrselect: null,
+onblur: null,
+
+… (continues with all event handlers = null or functions)
+
+open: ƒ (),
+opener: null,
+
+origin: "https://chatgpt.com",
+
+originAgentCluster: true,
+
+outerHeight: 1242,
+outerWidth: 1116,
+
+pageXOffset: 0,
+pageYOffset: 0,
+
+parent: Window { … },
+
+performance: Performance {
+timeOrigin: 1777122887930.5,
+onresourcetimingbufferfull: null,
+timing: PerformanceTiming,
+navigation: PerformanceNavigation,
+memory: MemoryInfo,
+…
+},
+
+personalbar: BarProp { visible: true },
+
+postMessage: ƒ postMessage(),
+
+print: ƒ print(),
+
+prompt: ƒ prompt(),
+
+queryLocalFonts: ƒ queryLocalFonts(),
+
+queueMicrotask: ƒ queueMicrotask(),
+
+regeneratorRuntime: {
+wrap: ƒ,
+isGeneratorFunction: ƒ,
+mark: ƒ,
+awrap: ƒ,
+AsyncIterator: ƒ,
+…
+},
+
+releaseEvents: ƒ releaseEvents(),
+reportError: ƒ reportError(),
+
+requestAnimationFrame: ƒ requestAnimationFrame(),
+requestIdleCallback: ƒ requestIdleCallback(),
+
+resizeBy: ƒ resizeBy(),
+resizeTo: ƒ resizeTo(),
+
+scheduler: Scheduler {},
+
+screen: Screen {
+availWidth: 1116,
+availHeight: 1242,
+width: 1116,
+height: 1242,
+colorDepth: 32,
+…
+},
+
+scroll: ƒ scroll(),
+scrollBy: ƒ scrollBy(),
+scrollTo: ƒ scrollTo(),
+
+scrollX: 0,
+scrollY: 0,
+
+scrollbars: BarProp { visible: true },
+
+self: Window { … },
+
+sessionStorage: Storage {
+adobeCleanFontAdded: 'true',
+length: 1
+},
+
+setInterval: ƒ setInterval(),
+setTimeout: ƒ setTimeout(),
+
+sharedStorage: SharedStorage {
+worklet: SharedStorageWorklet
+},
+
+speechSynthesis: SpeechSynthesis {
+pending: false,
+speaking: false,
+paused: false,
+onvoiceschanged: null
+},
+
+status: "",
+statusbar: BarProp { visible: true },
+
+stop: ƒ stop(),
+
+structuredClone: ƒ structuredClone(),
+
+styleMedia: StyleMedia { type: 'screen' },
+
+toolbar: BarProp { visible: true },
+
+top: Window { … },
+
+trustedTypes: TrustedTypePolicyFactory {
+emptyHTML: "",
+emptyScript: "",
+defaultPolicy: null
+},
+
+viewport: Viewport {
+segments: Array(1)
+},
+
+visualViewport: VisualViewport {
+offsetLeft: 0,
+offsetTop: 0,
+pageLeft: 0,
+pageTop: 0,
+width: 1116,
+…
+},
+
+webkitCancelAnimationFrame: ƒ webkitCancelAnimationFrame(),
+webkitRequestAnimationFrame: ƒ webkitRequestAnimationFrame(),
+
+window: Window { … },
+
+console: console {
+debug: ƒ,
+error: ƒ,
+info: ƒ,
+log: ƒ,
+warn: ƒ,
+…
+},
+
+decodeURI: ƒ decodeURI(),
+decodeURIComponent: ƒ decodeURIComponent(),
+
+encodeURI: ƒ encodeURI(),
+encodeURIComponent: ƒ encodeURIComponent(),
+
+escape: ƒ escape(),
+eval: ƒ eval(),
+
+globalThis: Window { … },
+
+isFinite: ƒ isFinite(),
+isNaN: ƒ isNaN(),
+
+parseFloat: ƒ parseFloat(),
+parseInt: ƒ parseInt(),
+
+undefined: undefined,
+
+unescape: ƒ unescape(),
+
+[[Prototype]]: Window
+}
+
+undefined       
+--!>
+
+
+
+<-- Inspect mei jaake yeh sab kiye --!>
+<-- document.getElementById('user-content--about-me')
+<a id=​"user-content--about-me" class=​"anchor" aria-label=​"Permalink:​ 💫 About Me:​" href=​"#-about-me">​…​</a>​flex
+document.getElementById('user-content--about-me').innerHTML = "<h1> Saket Sharma is such a great person </h1>"
+'<h1> Saket Sharma is such a great person </h1>' --!>
+
+
+
+
+
+
+<-- console.log(window.document)--!>
+<-- yeh krne se ek html document aayega --!>
+
+<-- console.log(document) --!>
+<-- isme bhi same cheez milega --!>
+
+<-- console.dir(document) --!>
+<-- isme baaki saari cheez bhi mil jayegi added to that html waala document --!>
