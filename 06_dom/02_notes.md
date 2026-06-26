@@ -267,3 +267,99 @@ document.querySelectorAll('li')
 NodeList(3) [li, li, li]
 const tempList = document.querySelectorAll('li')
 undefined
+
+# Notes:
+
+- Toh, nodelist aur HTML Collections are not arrays convenmtionally, we cannot use map and list on them, since unke prototype pe listed nhi hai map and few other properties related to arrays.
+
+>document.querySelectorAll('li')
+
+NodeList(3) [li, li, li]
+
+>const tempLiList = document.querySelectorAll('li')
+
+undefined
+
+>tempLiList
+
+NodeList(3) [li, li, li]
+
+- tempLiList ek nodelist bnn gya hai.
+- Nodelist aur html collections pure array nhi hai, array ke properties and prototypes nhi operate honge idhar.
+
+``` const tempLiList = document.querySelectorAll('li') 
+undefined
+tempLiList
+NodeList(3) [li, li, li]
+>tempLiList.style.color = "green"
+- yaha pe error aayega kyoki list hai, toh element wise color dena hoga
+VM1933:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    at <anonymous>:1:24
+(anonymous) @ VM1933:1
+tempLiList[0].style.color = "green"
+'green'
+tempLiList[2].style.color = "blue"
+'blue'
+```
+
+-same waisi heading ke liye bhi hoyega.
+
+``` const myH1 = document.querySelectorAll('h1')
+undefined
+myH1
+NodeList [h1#title.heading]
+myH1.style.color = 'green'
+VM3052:1 Uncaught TypeError: Cannot set properties of undefined (setting 'color')
+    at <anonymous>:1:18
+(anonymous) @ VM3052:1
+myH1[0].style.color = 'green'
+'green' ```
+
+- humein btana padega ki konsa element hai.
+- yeh ho hua querySelector aur querySelectorAll.
+
+``` const tempLiList = document.querySelectorAll('li') 
+undefined
+tempLiList
+NodeList(3) [li, li, li]
+tempLiList.forEach(function (l) {} )
+undefined
+tempLiList.forEach(function (l) {} )
+undefined
+tempLiList.forEach(function (l) { l.style.backgroundColor = 'green' } )
+undefined
+
+```
+
+- Dhyan dena ki ways tareeke hote hai to convert nodelist to arrays, and if you wish to apply map then have to convert to array, wrna map nhi lagega.
+- recommended hai ki nodelist ke saath mei forEach loop use kro, toh kaam ho jayega.
+
+# Notes:
+
+document.getElementsByClassName('list-item')
+HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]0: li.list-item1: li.list-item2: li.list-item3: li.list-itemlength: 4[[Prototype]]: HTMLCollectionitem: ƒ item()length: (...)namedItem: ƒ namedItem()constructor: ƒ HTMLCollection()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.toStringTag): "HTMLCollection"get length: ƒ length()[[Prototype]]: Objectconstructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()__proto__: (...)get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+const tempClassList = document.getElementsByClassName('list-item')
+undefined
+tempClassList
+HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+tempClassList.forEach(function () { console.log(li)})
+VM5799:1 Uncaught TypeError: tempClassList.forEach is not a function
+    at <anonymous>:1:15
+(anonymous) @ VM5799:1
+
+- HTMLCollections aur nodelist alag alag rhte hai.
+- humein htmnl collections ko array mei badalna hi padega to loop and all.
+
+``` const tempClassList = document.getElementsByClassName('list-item')
+undefined
+tempClassList
+HTMLCollection(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+Array.from(tempClassList)
+(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+const myConvertedArray = Array.from(tempClassList)
+undefined
+myConvertedArray
+(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+myConvertedArray.forEach(function(li) {li.style.color = 'orange'})
+undefined
+```
