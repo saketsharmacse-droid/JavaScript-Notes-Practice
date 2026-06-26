@@ -4,6 +4,8 @@
 
 - DOM mei page manipulation krenge, objects ko use krke changes krenge.
 
+- DOM mei har cheez ko ek node bola jata hai.
+
 
 
 
@@ -203,11 +205,65 @@ yeh page pe jo firse h1 hoga wo dega.
 
 
 Hum query selector use krke direct queries likh sakte hai.
+Agar css theek se aata hai, toh uske bhi query selectors use krr sakte hai
 
->document.querySelector('#title')
 
->document.querySelector('.heading')
-
->document.querySelector('.heading')
 
 >document.querySelector('input[type="password"]')
+
+>document.querySelector('p:first-child')
+
+
+>document.querySelector('.heading')
+
+``` html
+<h1 style=​"color:​ blue" id=​"title" class=​"heading">​…​</h1>
+```
+>document.querySelector('#title')
+
+``` html
+<h1 style=​"color:​ blue" id=​"title" class=​"heading">​…​</h1>
+```
+
+>document.querySelector('h2')
+
+``` html
+<h2>​ Lorem ipsum dolor sit.​</h2>
+```
+
+- Humein main do cheez seekhna hai, DOM aur Events
+
+>document.querySelector('ul')
+<ul>​…​</ul>
+​
+>const myUl = document.querySelector('ul')
+
+undefined
+
+
+>myUl.querySelector('li')
+
+<li style=​"background-color:​ green;​ padding:​ 30px;​">​…​</li>​
+
+>const turnGreen =  myUl.querySelector('li')
+
+undefined
+
+>turnGreen.style.backgroundColor = "green"
+
+'green'
+
+>turnGreen.style.padding = "30px"
+
+'30px'
+
+>turnGreen.innerText = "five"
+
+'five'
+
+### Yaha pe array return ni hota hai, usually HTML Collections aur NodeList aata hai
+
+document.querySelectorAll('li')
+NodeList(3) [li, li, li]
+const tempList = document.querySelectorAll('li')
+undefined
