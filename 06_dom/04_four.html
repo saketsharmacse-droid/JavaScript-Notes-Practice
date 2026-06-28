@@ -5,7 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saket Sharma</title>
 </head>
-<body>
+<body style="background-color: #212121; color:#fff">
     
 </body>
+
+<script>
+// Script ke andar element create krna hai, jaise document ke andar getElementById wagera use krr sakte hi, toh ek baar new element create ho jaayega uske baad loop laga sakte hai, aur bhi bahut kuch krr sakte hai usme.
+const div = document.createElement('div');
+console.log(div);
+div.className = "main";
+//div.id = "myId"
+div.id = Math.round(Math.random() * 10 + 1);
+div.setAttribute("title", "generated title");
+div.style.backgroundColor = "green";
+div.style.padding = "12px";
+//div.innetText = "Saket Sharma"
+//innerText aur className phle uss already present value ka reference leke aayega, uske baad usko set krega, but setAttribute jo bhi hai waha pe usko directly overrite krr dega, toh yaha pe ek round trip bach jata hai.
+
+const addText = document.createTextNode("Chai peena hai")
+div.appendChild(addText)
+
+//yeh sab console mei dikhai hoga, but yeh sab page pe siaplay nhi hora hai kyoki humara jo div liya gya hai wo abhi memory pe hai, page pe nhi aaya hai, toh page pe laaane ke liye we have to tell the document to atach it over the page, attachng krwana padega.
+
+document.body.appendChild(div)
+
+
+</script>
 </html>
