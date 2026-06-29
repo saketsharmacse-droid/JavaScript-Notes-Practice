@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saket Sharma | DOM</title>
+</head>
+<body style="background-color: #212121; color:#fff;">
+    <ul class="language">
+        <li>JavaScript</li>
+    
+    </ul>
+    
+</body>
+<script>
+//our target is to add another list item, jiske do teen tarike hosakte hai.
+//ek kaam krte hai, ek function bna dete hai uska.
+
+function addLanguage(langName) {
+    const li = document.createElement('li')
+    li.innerHTML = `${langName}`
+    document.querySelector('.language').appendChild(li)
+}
+addLanguage("Python")
+addLanguage("Java")
+addLanguage("TypeScript")
+
+//yaha pe , yeh jo function ka method hai jo new list item add krr rha, usko har baar dom ka tree traverse krke last mei item add krr rha hai, like yaha pe toh sirf ek li tha , but agar originally 1k yaa 1lac li rhta toh, iske toh har mrthod call pe poora tree traverse krna padta, toh optimization accha nhi hai.
+
+function addOptimiseLang(langName){
+    const li = document.createElement('li')
+    li.appendChild(document.createTextNode(langName))
+
+    document.querySelector('.language').appendChild(li)
+}
+addOptimiseLang("goLang")
+
+
+//Edit krna seekhte hai ab:
+
+const secondLang = document.querySelector("li:nth-child(2)")
+//secondLang.innerHTML = "Mojo"
+const newLi = document.createElement("li")
+newLi.textContent = "Mojo"
+secondLang.replaceWith(newLi)
+
+//Edit
+const firstLang = document.querySelector("li:first-child")
+firstLang.outerHTML = '<li>TypeScript</li>'
+
+//remove
+const lastLang = document.querySelector('li:last-child')
+lastLang.remove()
+
+
+</script>
+</html>
