@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events in JS</title>
+</head>
+<body style="background-color:#414141 ; color: aliceblue;">
+    <h2>Amazing Images Gallery</h2>
+    <div>
+        <ul id="images">
+            <li>
+                <img width="200px" id="bird" src="https://images.pexels.com/photos/30174893/pexels-photo-30174893.jpeg" alt="bird">
+            </li> 
+            <li>
+                <img width="200px" id="meercat" src="https://images.pexels.com/photos/27532234/pexels-photo-27532234.jpeg" alt="">
+            </li> 
+            <li>
+                <img width="200px" id="Forest" src="https://images.pexels.com/photos/22696584/pexels-photo-22696584.jpeg" alt="">
+            </li>
+            <li>
+                <img width="200px" id="boat" src="https://images.pexels.com/photos/36145532/pexels-photo-36145532.jpeg" alt="">
+            </li>
+            <li>
+                <img width="200px" id="nyc" src="https://images.pexels.com/photos/30775233/pexels-photo-30775233.jpeg" alt="">
+                <!-- <img width="200px" id="nyc" src="https://images.pexels.com/photos/30775233/pexels-photo-30775233.jpeg" onClick="alert('NewYorkCity')" alt=""> -->
+                <!-- not a feasible approch for scable codes to inject onto the html -->
+                <!-- This way of using onClick will work in code, but is not at all a desired approach, do not use such kind of events, as in long codes it could yield in serious problems, although, in reactJS, we'll directly use onclick inside butons, bit that is a framework and there it is a completelyt different scenario, but in js, we do not have to use it in this way -->
+            </li>
+            <li><a style="color:aliceblue;" href="https://google.com" id="google">Google</a></li>
+
+        </ul>
+    </div>
+
+    <script>
+        //events in js are a sequentially executing thing, the entire js is a sequential prohgrammin g language.
+        //jitne bhi events hote hai wo subsequentially run hote hai.
+        //exceptions are seen in asynchronous programming.
+
+
+
+        //document.getElementById('nyc').onclick = function(){
+        //    alert('This is NewYork City')
+        //}
+        //while yeh tareka accha dikh rha, but it is recommended to use event listenrs, since onclick zyada information nhi de paa rha.
+        //onclick kam features deta hai, event listners zyada deta hai functionality, including the propagation ki ability bhi deta hai.
+
+        document.getElementById('nyc').addEventListener('click',function(){
+            alert('This is nyc of USA')
+        }, false) //isme ek third parameter bhi rhta hai, true false ka, by default false rhta hai toh likho na likho doesnt matter.
+
+        //ek aur method hai same cheez ko krne ka:
+        //attachEvent() method
+        //jQuery framework mei ek: on eventlistner rhta tha, toh .on krke ho jata tha same kaam.
+
+
+        document.getElementById('Forest').addEventListener('click', function(e){
+            alert("This is a Forest")
+            console.log(e.timeStamp)
+        }, false)
+
+        //Events mei padhna kya kya hai:
+        //Type , timeStamp, defaultPrevented
+        //target, toElement, srcElement, currentTarget
+        //clientX, clientY, screenX, screenY, offset
+        //altkey, ctrlkey, shiftkey, keyCode
+
+        //Event Propogation ke do context hai:
+        //default False: event bubbling, aur ek hota hai event capturing, true pe.
+
+        document.getElementById('images').addEventListener('click', function(e){
+            console.log("Clicked inside the ul")
+        }, false)
+
+        document.getElementById('bird').addEventListener('click', function(e){
+            console.log("owl clicked")
+            e.stopPropagation() //event bubble hoke upar ke event pe nhi jayega.
+        }, false)
+
+        //bubbling mei jaise bubble neecvhe se upar jaata hai waise phle inner waala element ka execute hoga uske bad outer waale ka, upar waale ka
+        //output when clicking owl: owl clicked fir print hoga Clicked inside the ul.
+
+        //Script track krr rii hai bade elements ko inside se outside usko bolte hai event propagation, bubbling.
+
+        //capturing mei upar se neeche hota hai, phle Clicked inside ul fir owl clicked print hoga.
+        //capturing krne ke liyte dono events ko true krna padega.
+        
+
+        document.getElementById('google').addEventListener('click', function(e){
+            //e.defaultPrevented()
+            e.preventDefault();
+            e.stopPropagation();
+            console.log("google clicked")
+        }, false)
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>
