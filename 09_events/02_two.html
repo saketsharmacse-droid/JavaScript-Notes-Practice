@@ -1,0 +1,61 @@
+<!-- Yaha pe hum log ek activity krenge, jisme click krte hi wo particular image will vanish, gayab ho jayega -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Activity One</title>
+</head>
+<body style="background-color:#414141 ; color: aliceblue;">
+    <h2>Amazing Images Gallery</h2>
+    <div>
+        <ul id="images">
+            <li>
+                <img width="200px" id="bird" src="https://images.pexels.com/photos/30174893/pexels-photo-30174893.jpeg" alt="bird">
+            </li> 
+            <li>
+                <img width="200px" id="meercat" src="https://images.pexels.com/photos/27532234/pexels-photo-27532234.jpeg" alt="">
+            </li> 
+            <li>
+                <img width="200px" id="Forest" src="https://images.pexels.com/photos/22696584/pexels-photo-22696584.jpeg" alt="">
+            </li>
+            <li>
+                <img width="200px" id="boat" src="https://images.pexels.com/photos/36145532/pexels-photo-36145532.jpeg" alt="">
+            </li>
+            <li>
+                <img width="200px" id="nyc" src="https://images.pexels.com/photos/30775233/pexels-photo-30775233.jpeg" alt="">
+            
+            </li>
+            <li><a style="color:aliceblue;" href="https://google.com" id="google">Google</a></li>
+
+        </ul>
+    </div>
+
+    <script>
+
+        //kahi bhi click krne se ek pointerEvent aayega comsole mei, usme bahut saare parameters aur methods hote hai which we can use.
+
+        document.querySelector('#images').addEventListener('click', function(e){
+            console.log(e.target.tagName);
+            
+            if(e.target.tagName === 'IMG'){
+            console.log(e.target.id)
+            //console.log(e.target.parentNode)
+            let removeit = e.target.parentNode;
+            removeit.remove()
+            }
+            //removeit.parentNode.removeChild(removeit)
+
+            //ab, agar hum google ke saamne click krenge, toh poora sab kuchh gaqyab ho jaa rha
+            //aisa isliye ho rha kyoki li pe click hora, toh parent mei uska list return hoga ul, toh wo poore list ko remove krr dega.
+            //toh hum checks laga sakte hai.
+            //we can use tagName to return the tag of the clicked entity.
+        }, false)
+    
+
+    </script>
+
+
+    
+</body>
+</html>
