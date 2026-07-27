@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Participation</title>
+    <style>
+        body{
+    background-color: #1e1e1e;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#box{
+    width: 700px;               /* Form width */
+    background-color: beige;
+    color: black;
+
+    padding: 30px;
+    border: 3px solid white;
+    border-radius: 15px;
+
+    box-shadow: 0 0 20px rgba(255,255,255,0.35);
+}
+
+fieldset{
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+legend{
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+form{
+    text-align: left;
+}
+
+input,
+select,
+textarea{
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"]{
+    width: auto;
+}
+
+input[type="submit"]{
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover{
+    background-color: #0056b3;
+}
+        
+    </style>
+</head>
+<body>
+    <script>
+
+        
+
+    </script>
+
+    <div id="box">
+    <fieldset id="field">
+        <legend>Your Details</legend>
+        <form id="i1">
+            <label for="fname">First Name :</label>
+            <input id="fname" type="text" placeholder="Enter Your First Name"><br><br>
+
+            <label for="lname">Last Name :</label>
+            <input id="lname" type="text" placeholder="Enter Your Last Name"><br><br>
+
+            <label for="email">Email Id :</label>
+            <input id="email" type="email" placeholder="Enter Your Email"><br><br>
+
+            <label for="phone">Phone Number :</label>
+            <input id="phone" type="tel" placeholder="Enter Your Number"><br><br>
+
+            <label for="Branch">Branch :</label>
+            <input id="Branch" type="text" placeholder="Enter Your Branch"><br><br>
+
+            <label for="fathername">Father's Name :</label>
+            <input id="fathername" type="text" placeholder="Enter Your Father's Name"><br><br>
+
+            <label for="mname">Mother's Name :</label>
+            <input id="mname" type="text" placeholder="Enter Your Mother's Name"><br><br>
+
+            <label for="age">Age :</label>
+            <input id="age" type="date" placeholder="Enter Your Date of birth"><br><br>
+
+            <select id="select">
+                <option value="">Select the Club</option>
+                <option>Sports Club</option>
+                <option>Dance Club</option>
+                <option>Music Club</option>
+                <option>Coding Club</option>
+                <option>Space Club</option>
+                <option>Art Club</option>
+                <option>Reading Club</option>
+            </select><br><br>
+
+            <textarea rows="20" cols="40" value="Enter comments">About Yourself :</textarea><br><br>
+
+            <article>By checking the "I Agree" checkbox, you confirm that:
+            <ul>
+            <li>The information provided in this form is true and accurate to the best of your knowledge.</li>
+            <li>You understand that all required fields must be completed before submitting the form.
+            <li>You have reviewed your details and corrected any errors before submission.</li>
+            You agree to follow the validation rules, including providing a valid email address and a strong password where required.</li></ul>
+            </article><br>
+            <input type="checkbox" id="check">
+            <label for="check">I Agree</label><br><br>
+
+            <input type="submit" id="submit" value="submit">
+            
+            
+            
+        </form>
+    </fieldset>
+    </div>
+</body>
+</html>
