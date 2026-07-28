@@ -1,0 +1,46 @@
+<!-- Here we shall study about the web Api and methods and functions -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Saket Sharma</h1>
+    <button id="stop">Stop</button>
+
+<script>
+    //setTimeout() setInterval() yeh sab methods hi hai, but yeh core js ke andar nhi aate hai, yeh js ke engine ke bahar jaate hai call hoke, web api mei fetch hote hai. Yeh dono bhi window object ke prototypes hi hai.
+
+    //handler is a callback, a function jiska naam nhi hai.
+    const saySaket = function(){
+        console.log("Saket Bolo");
+    }
+    setTimeout(saySaket, 3000)//uska reference leke use krr sakte hai
+
+    setTimeout(function(){
+        console.log("Saket");
+    }, 2000)
+    //these are the two ways to use this
+
+    const changeText = function(){ 
+        document.querySelector('h1').innerHTML = "Best Backend Engineer in the World!"
+    }
+    const changeText1 = setTimeout(changeText, 4000)
+
+    //clearTimeout bhi hota hai ek, jo iss change ko rok sakta hai, because agar set time mei wo cheez execute nhi hui, toh kya krna hai wo btyega yeh.
+    //clearTimeout(changeText) : yeh krne ka koi sense nhi hai kyoki execute nhi hoga.
+    //but backend mei kya hora ki yeh poora wo callstack jo request gyi hui hai web api mei usko hi discard krr dega yeh clearTimeout.
+    //isko events pe use krte  hai mostly.
+    
+    document.querySelector('#stop')
+    addEventListener('click',function(){
+        clearTimeout(changeText1);
+        console.log("STOPPED");
+    })
+</script>
+
+</body>
+</html>
