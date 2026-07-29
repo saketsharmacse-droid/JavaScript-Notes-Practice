@@ -1,0 +1,46 @@
+<!-- API is basically a language or a way to communicate between systems, like between humare frontend aur backend, between dusre ke backend aur humare frontend, and between two backends as well. -->
+<!-- so, basicsally api ek object ke form mei aata hai,  uska structure is like {...} and iske andar further nesting and arrays rhte hai, toh iska yeh structure samajhne ke liye we might use json beautifier tree structure, to distinguish objects and all.  -->
+<!-- api request krne ke liye fetchapi method use krte hai, jo ki kaafi new method hai, toh iske phle kya use krte thhe?: saalon se hum kaise request krte thhe: waha pe hum xml http request use krte thhe. -->
+
+<!-- xmlhttprequest is an AJAX programming: Asynchronous JS and XML -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color:#212121; color:bisque">
+    <ul>
+            <li>0	UNSENT	Client has been created. open() not called yet.</li>
+            <li>1	OPENED	open() has been called.</li>
+            <li>2	HEADERS_RECEIVED	send() has been called, and headers and status are available.</li>
+            <li>3	LOADING	Downloading; responseText holds partial data.</li>
+            <li>4	DONE	The operation is complete.</li>
+    </ul>
+
+
+
+<script>
+    //xml ki jo request bheji jati hai (ajax request) uske liye phle ek object bnate hai:
+    const requesturl = "https://api.github.com/users/saketsharmacse-droid"
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('GET', requesturl);//yeh continuously trach nhi krega,bus ek baar waala de dega i.e. 1
+
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            //console.log(this.responseText) //this is used to indicate the current context.
+            const data = JSON.parse(this.responseText);
+            //typeof data krenge toh string aayega, kyoki most of the time jab url se response aata hai toh wo string mei hi aata hai most of the time, though wo ek object rhta hai.
+            //parse string ko json mei convert krr deta hai.
+            console.log(data.followers)
+        }
+    }
+
+    xhr.send() //open apne aap call nhi hoyega, yeh krne se hi call hoga.
+</script>
+</body>
+</html>
