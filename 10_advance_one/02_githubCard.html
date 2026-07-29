@@ -1,0 +1,142 @@
+<!-- yaha pe ek card bnaunga, jo github se photo and number of followers fetch krke uss card mei display krega jaise hi user button press krta hai. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Id Card</title>
+
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background-image:url("https://images.unsplash.com/photo-1498429089284-41f8cf3ffd39?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");  
+    background-size:cover;
+    background-position:center;
+}
+
+.container{
+    text-align:center;
+}
+
+input{
+    padding:12px;
+    width:250px;
+    border:none;
+    border-radius:5px;
+    font-size:16px;
+}
+
+button{
+    padding:12px 20px;
+    margin-left:10px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+    background:#000;
+    color:white;
+    font-size:16px;
+}
+
+button:hover{
+    background:#333;
+}
+
+.card{
+    margin-top:30px;
+    width:350px;
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+    padding:20px;
+    border-radius:15px;
+    color:white;
+    display:none;
+}
+
+.card img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    border:4px solid white;
+}
+
+.card h2{
+    margin:15px 0 5px;
+}
+
+.card p{
+    margin:8px 0;
+}
+
+</style>
+</head>
+
+
+<body>
+    <div class="container">
+        <input type="text" id="username" placeholder="Enter GitHub UserName">
+        <button id="search">SEARCH</button>
+
+        <div class="card" id="card">
+            <img id="avatar">
+            <h2 id="name"></h2>
+            <p id="login"></p>
+            <p id="followers"></p>
+            <p id="following"></p>
+            <p id="repos"></p>
+            <p id="bio"></p>
+        </div>
+    </div>
+
+    <script>
+
+        const button = document.querySelector('#search')
+        button.addEventListener('click', function(){
+            const username = document.getElementById('username').value;
+            if(username == ""){
+                alert("Please enter your username!")
+                return;
+            }
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET',"https://api.github.com/users/" +username);
+
+            xhr.onreadystatechange = function()
+            {
+                if(xhr.readyState === 4){
+                    if(xhr.status === 200){
+                        const data = JSON.parse(this.responseText);
+
+                        document.getElementById("card").style.display="block";
+                        document.getElementById("avatar").src=data.avatar_url;
+                        document.getElementById("name").innerHTML=data.name;
+                        document.getElementById("login").innerHTML="Username : "+data.login;
+                        document.getElementById("followers").innerHTML="Followers : "+data.followers;
+                        document.getElementById("following").innerHTML="Following : "+data.following;
+                        document.getElementById("repos").innerHTML="Public Repositories : "+data.public_repos;
+                        document.getElementById("bio").innerHTML="Bio : "+data.bio;
+                    }
+                    else{
+                        alert("User Not Found");
+                    }
+
+                }
+
+            }
+            xhr.send();
+        })
+    </script>
+</body>
+</html>
