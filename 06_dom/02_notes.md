@@ -1,6 +1,6 @@
 ## DOM Manipulations
 
-- Bahut saare methods hote hai window obkect pe, jisko use krke hum log instantly inspect ke console pe jaake use krke manipulate krr sakte hai humare web pages ko.
+- Bahut saare methods hote hai window object pe, jisko use krke hum log instantly inspect ke console pe jaake use krke manipulate krr sakte hai humare web pages ko.
 
 - DOM mei page manipulation krenge, objects ko use krke changes krenge.
 
